@@ -1,0 +1,17 @@
+package VehicleTextApp;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Audi test = new Audi("568-561", "Mladen", 2018);
+		System.out.println(test.getPrice());
+		test.start();
+		test.registerCar(56);
+		test.start();
+		test.drift();
+		test.accelerate(60);
+		test.drift();
+		test.park();
+	}
+
+}
