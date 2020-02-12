@@ -1,0 +1,39 @@
+package VehicleTextApp;
+
+public class Audi extends Car {
+	private String plateNumber;
+	private String owner;
+	private int registrationYear;
+	
+	public Audi(String plateNumber, String owner, int registrationYear) {
+		super(150, 4, 4, 100, "$6899");
+		this.plateNumber = plateNumber;
+		this.owner = owner;
+		this.registrationYear = registrationYear;
+	}
+	public Audi() {
+		this("000-000", "Unknown", 2000);
+	}
+	public String getPlateNumber() {
+		return plateNumber;
+	}
+	public String getOwner() {
+		return owner;
+	}
+	public int getRegistrationDate() {
+		return registrationYear;
+	}
+	@Override
+	public void start() {
+		if(registrationYear > 2020)
+			super.start();
+		else System.out.println("You need to register your car in order to drive it");
+	}
+	public void registerCar(int years) {
+		if(registrationYear <= 2020) {
+			registrationYear += years;
+			System.out.println("Car successfully registred");
+		}else System.out.println("Car already registred");
+	}
+	
+}
