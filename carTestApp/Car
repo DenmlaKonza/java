@@ -1,0 +1,45 @@
+package VehicleTextApp;
+
+public class Car extends Vehicle {
+	private int horsePower;
+	private int doors;
+	private int wheels;
+	private String model;
+	
+	public String getModel() {
+		return model;
+	}
+	public int getHorsePower() {
+		return horsePower;
+	}
+	public int getDoors() {
+		return doors;
+	}
+	public int getWheels() {
+		return wheels;
+	}
+	public Car(int horsePower, int doors, int wheels, int size, String price) {
+		super("Car", size, price);
+		this.horsePower = horsePower;
+		this.doors = doors;
+		this.wheels = wheels;
+	}
+	public Car() {
+		this(1, 4, 4, 1, "$1");
+	}
+	public void park() {
+		if(getMoving() == true) {
+			System.out.println("Parking car...");
+			stop();
+			System.out.println("Car parked!");
+		}
+		
+	}
+	public void drift() {
+		if(getMoving() == true && getGear() >= 3) {
+			System.out.println("Drifting woohoo!!");
+		}else {
+			System.out.println("You need to get more speed in order to drift");
+		}
+	}
+}
